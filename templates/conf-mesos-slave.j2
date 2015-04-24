@@ -3,3 +3,16 @@
 export MESOS_MASTER="{{ mesos_zookeeper_masters }}"
 export MESOS_CONTAINERIZERS="{{ mesos_containerizers }}"
 export MESOS_EXECUTOR_REGISTRATION_TIMEOUT="{{ mesos_executor_timeout }}"
+
+{% if mesos_slave_work_dir is defined %}
+export MESOS_work_dir="{{ mesos_slave_work_dir }}"
+{% endif %}
+
+{% if mesos_docker_stop_timeout is defined %}
+export MESOS_docker_stop_timeout="{{ mesos_docker_stop_timeout }}"
+{% endif %}
+
+{% if mesos_enforce_container_disk_quota is defined %}
+export MESOS_enforce_container_disk_quota={{ mesos_enforce_container_disk_quota }}
+{% endif %}
+
