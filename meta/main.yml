@@ -103,7 +103,8 @@ galaxy_info:
   - system
   #- web
   - platform
-dependencies: []
+dependencies:
+  - { role: "git+https://github.com/jaytaylor/ansible-java8", tags: ["java"], when: ansible_os_family == "Debian" }
   # - ansible-java
   # - ansible-scala
   # - ansible-sbt
